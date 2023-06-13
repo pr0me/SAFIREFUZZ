@@ -1,0 +1,6 @@
+[submodule "LibAFL"]
+	path = LibAFL
+	url = git@github.com:AFLplusplus/LibAFL.git
+[submodule "keystone"]
+	path = keystone
+	url = git@github.com:keystone-engine/keystone.git
