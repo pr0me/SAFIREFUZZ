@@ -4,7 +4,7 @@ pub mod atmel_http;
 pub mod libjpeg_decoding;
 pub mod nxp_http;
 pub mod p2im_drone;
-pub mod p2im_plc_slave;
+pub mod p2im_plc;
 pub mod st_plc;
 pub mod stm32_sine;
 pub mod stm32_tcp_echo_client;

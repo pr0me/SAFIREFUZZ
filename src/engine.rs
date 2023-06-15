@@ -1,4 +1,4 @@
-use crate::harness::libjpeg_decoding as harness;
+use crate::harness::p2im_plc as harness;
 #[cfg(feature = "dbg_prints")]
 use crate::signals;
 use crate::utils::{
