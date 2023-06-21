@@ -2,7 +2,7 @@
 _Same-Architecture Firmware Rehosting and Fuzzing_
 
 
-<a href="https://download.vusec.net/papers/safirefuzz_sec23.pdf"> <img title="" src="images/paper.png" alt="forming faster firmware fuzzers paper" align="right" width="200"></a>
+<a href="https://download.vusec.net/papers/safirefuzz_sec23.pdf" target="_blank"> <img title="" src="images/paper.png" alt="forming faster firmware fuzzers paper" align="right" width="200"></a>
 
 ## Introduction
 We propose near-native rehosting: running embedded firmware as a Linux userspace
