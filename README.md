@@ -14,6 +14,23 @@ This repository holds the code for the USENIX `23 publication "Forming Faster Fi
 
 <br />
 
+## Setup 
+__Important__: a CPU supporting ARMv7-M is required, e.g., Cortex-A72s found in Raspberry Pi 4s.  
+
+Although the Cortex CPUs in Raspberry Pis support the aarch32 architecture with the A32 instruction set, most OSs will assume aarch64 as a default.  
+In order to execute 32-bit applications, it is necessary to have all libraries installed for the 32-bit instruction set (armhf) _besides_ the usual and cross-compilation libs (cf. https://wiki.debian.org/Multiarch/HOWTO).
+Under Debian this can be achieved with:  
+```
+sudo dpkg --add-architecture armhf
+sudo apt update
+sudo apt install libc6:armhf
+```
+If these steps fail, this suggests that your OS might not be compiled with the required `COMPAT` [kernel flag](https://github.com/torvalds/linux/blob/v4.17/arch/arm64/Kconfig#L1274).
+
+We recommend the [Raspberry Pi OS](https://downloads.raspberrypi.org/raspios_lite_arm64/images/ ) as the maintainers are specifically considering this usecase:
+https://forums.raspberrypi.com/viewtopic.php?t=331968
+
+
 ## Installation
 1. Install the cargo cross compilation toolchain for `armv7-unknown-linux-gnueabihf` as well as `gcc-arm-unknown-linux-gnueabihf` and `g++-arm-unknown-linux-gnueabihf`.  
     Add the following to your cargo config in `~/.cargo/config`:
@@ -41,7 +58,7 @@ This repository holds the code for the USENIX `23 publication "Forming Faster Fi
 
 5. Configure your system before the first execution:
 The `prepare_sys.sh` script disables ASLR and allows mapping of virtual memory down to address 0.  
-Note, that a CPU supporting ARMv7-M is required, e.g.,  Cortex-A72s found in Raspberry Pi 4s.
+
 
 ## Usage
 - A single file or all files in a directory can be executed N (e.g., 1000) times with
@@ -53,7 +70,7 @@ Note, that a CPU supporting ARMv7-M is required, e.g.,  Cortex-A72s found in Ras
   ./safirefuzz -b firmware/wycinwyc.bin -i inputs/wycinwyc -f
   ```
 
-Firmware binaries and fuzzing seeds used during our evaluation will be made available at https://github.com/pr0me/safirefuzz-experiments.
+Firmware binaries and fuzzing seeds used during our evaluation are available at https://github.com/pr0me/safirefuzz-experiments.
 
 ## Harnessing
 A basic harness skeleton is provided in `src/harness/skeleton.rs`.  
@@ -78,7 +95,7 @@ SAFIREFUZZ (red) achieves better coverage in a fraction of the time when compare
 On this target, we achieve 3400 executions per second, compared to 4.8 for HALucinator and 87.2 for FuzzWare.
 
 A thorough performance evaluation can be found in our paper.  
-Experiment data will be made available at https://github.com/pr0me/safirefuzz-experiments.
+Experiment data is available at https://github.com/pr0me/safirefuzz-experiments.
 
 <br />
 
