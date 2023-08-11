@@ -1,9 +1,11 @@
 # SAFIREFUZZ
 _Same-Architecture Firmware Rehosting and Fuzzing_
 
+[![DOI](https://zenodo.org/badge/464097173.svg)](https://zenodo.org/badge/latestdoi/464097173)
+
+<br />
 
 <a href="https://download.vusec.net/papers/safirefuzz_sec23.pdf" target="_blank"> <img title="" src="images/paper.png" alt="forming faster firmware fuzzers paper" align="right" width="200"></a>
-
 ## Introduction
 We propose near-native rehosting: running embedded firmware as a Linux userspace
 process on a high-performance system that shares the instruction set family with the targeted device. 
