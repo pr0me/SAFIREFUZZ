@@ -102,11 +102,12 @@ Experiment data is available at https://github.com/pr0me/safirefuzz-experiments.
 <br />
 
 ## Citation
-```
-@inproceedings{seidel2023ffff,
+```bibtex
+@inproceedings{2023_safirefuzz,
   title={Forming Faster Firmware Fuzzers},
   author={Seidel, Lukas and Maier, Dominik and Muench, Marius},
-  booktitle={USENIX 2023},
+  booktitle={USENIX Security},
+  url = {https://www.usenix.org/conference/usenixsecurity23/presentation/seidel},
   year={2023}
 }
 ```
