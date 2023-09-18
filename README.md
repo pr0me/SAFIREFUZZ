@@ -25,7 +25,7 @@ Under Debian this can be achieved with:
 ```
 sudo dpkg --add-architecture armhf
 sudo apt update
-sudo apt install libc6:armhf
+sudo apt install libc6:armhf libstdc++6:armhf
 ```
 If these steps fail, this suggests that your OS might not be compiled with the required `COMPAT` [kernel flag](https://github.com/torvalds/linux/blob/v4.17/arch/arm64/Kconfig#L1274).
 
